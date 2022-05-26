@@ -1,9 +1,12 @@
 tasks:
+  - name: tailwind
+    command: python manage.py tailwind start
   - init: |
       python -m venv venv
       source venv/bin/activate
       pip install --upgrade pip wheel setuptools
       pip install Django
+      pip install django-tailwind
       python manage.py migrate
     command: |
       source venv/bin/activate
@@ -17,3 +20,4 @@ ports:
 vscode:
   extensions:
     - ms-python.python
+    - batisteo.vscode-django
