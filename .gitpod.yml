@@ -1,6 +1,4 @@
 tasks:
-  - name: tailwind
-    command: python manage.py tailwind start
   - init: |
       python -m venv venv
       source venv/bin/activate
@@ -10,7 +8,10 @@ tasks:
       python manage.py migrate
     command: |
       source venv/bin/activate
-      python manage.py runserver
+  - name: tailwind
+    command: python manage.py tailwind start
+  - name: server
+    command: python manage.py runserver
   
 ports:
   - port: 8000

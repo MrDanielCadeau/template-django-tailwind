@@ -6,7 +6,7 @@ This is a [Python Django](https://www.djangoproject.com) with [Tailwind](https:/
 
 Click the button below to start a new development environment:
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](#https://github.com/MrDanielCadeau/template-django-tailwind)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://github.com/MrDanielCadeau/template-django-tailwind)
 
 ## Get Started With Your Own Project
 
