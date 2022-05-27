@@ -11,6 +11,7 @@ tasks:
     init: |
       gp sync-await setup
       pip install Django
+      python -m pip install django-browser-reload
       pip install django-tailwind
       python manage.py tailwind install
       gp sync-done build
@@ -18,7 +19,6 @@ tasks:
   - name: server
     init: |
       gp sync-await build
-      pip install Django
       python manage.py migrate
     command: python manage.py runserver
     openMode: split-right
