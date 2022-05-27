@@ -1,10 +1,10 @@
 tasks:
-  - init: |
+  - name: env
+    init: |
       python -m venv venv
       source venv/bin/activate
       pip install --upgrade pip wheel setuptools
       pip install Django
-      pip install django-tailwind
       python manage.py migrate
       gp sync-done setup
     command: |
@@ -12,11 +12,15 @@ tasks:
   - name: tailwind
     init: |
       gp sync-await setup
+      pip install Django
+      pip install django-tailwind
       python manage.py tailwind install
       gp sync-done build
     command: python manage.py tailwind start
   - name: server
-    init: gp sync-await build
+    init: |
+      gp sync-await build
+      pip install Django
     command: python manage.py runserver
     openMode: split-right
   
