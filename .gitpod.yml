@@ -4,8 +4,6 @@ tasks:
       python -m venv venv
       source venv/bin/activate
       pip install --upgrade pip wheel setuptools
-      pip install Django
-      python manage.py migrate
       gp sync-done setup
     command: |
       source venv/bin/activate
@@ -21,6 +19,7 @@ tasks:
     init: |
       gp sync-await build
       pip install Django
+      python manage.py migrate
     command: python manage.py runserver
     openMode: split-right
   
